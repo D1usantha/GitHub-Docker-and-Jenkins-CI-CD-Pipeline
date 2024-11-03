@@ -17,9 +17,7 @@ pipeline {
         stage('Login to Docker Hub') {
             steps {
                 withCredentials([string(credentialsId: '9437794b-ba13-4924-9197-314de82d653e', variable: 'DOCKER_PASSWORD')]) {
-    bat 'echo %DOCKER_PASSWORD% | docker login -u dusantha638 --password-stdin'
-}
-
+                    bat "echo ${DOCKER_PASSWORD} | docker login -u dusantha638 --password-stdin"
                 }
             }
         }
