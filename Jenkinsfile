@@ -16,10 +16,10 @@ pipeline {
         }
         stage('Login to Docker Hub') {
             steps {
-                // Use withCredentials to access the Docker password
                 withCredentials([string(credentialsId: '9437794b-ba13-4924-9197-314de82d653e', variable: 'DOCKER_PASSWORD')]) {
-                    // Login to Docker Hub using the stored password
-                    bat 'echo %DOCKER_PASSWORD% | docker login -u dusantha638 --password-stdin'
+    bat 'echo %DOCKER_PASSWORD% | docker login -u dusantha638 --password-stdin'
+}
+
                 }
             }
         }
